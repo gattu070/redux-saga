@@ -24,3 +24,19 @@ body::-webkit-scrollbar {
 p {
     margin-bottom: 0px !important;
 }
+
+.first {
+    --animate-duration: 0.3s;
+}
+
+.sec {
+    --animate-duration: 0.5s;
+}
+
+.thir {
+    --animate-duration: 0.7s;
+}
+
+.for {
+    --animate-duration: 0.9s;
+}

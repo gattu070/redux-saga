@@ -1,28 +1,30 @@
 import React from 'react';
 import { addToCart } from "../redux/action";
 import { useDispatch } from "react-redux";
+import Navbar from './Navbar';
 
 export const Home = () => {
 
     const dispatch = useDispatch();
 
-    const products = [
-        {
-            id: 1,
-            name: 'Product 1',
-        }
-    ]
+    const product = {
+        id: 1,
+        name: 'Product 1'
+    }
 
     return (
-        <div className='d-flex justify-content-center mt-5'>
-            <button
-                className='px-3'
-                onClick={() =>
-                    dispatch(addToCart(products))
-                }
-            >
-                Add to Cart
-            </button>
+        <div>
+            <Navbar />
+            <div className='text-center mt-3'>
+                <h3>Home Page</h3>
+                <button
+                    className='px-3 mt-3'
+                    onClick={() => dispatch(addToCart(product))}
+                >
+                    Add to Cart
+                </button>
+            </div>
+
         </div>
     )
 }
