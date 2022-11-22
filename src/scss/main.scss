@@ -1,4 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// 4. Include any optional Bootstrap components as you like
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+
+// 5. Add additional custom code here
 * {
     margin: 0;
     padding: 0;
@@ -25,18 +46,144 @@ p {
     margin-bottom: 0px !important;
 }
 
-.first {
-    --animate-duration: 0.3s;
+.navbar {
+    .first {
+        --animate-duration: 0.3s;
+    }
+
+    .sec {
+        --animate-duration: 0.5s;
+    }
+
+    .thir {
+        --animate-duration: 0.7s;
+    }
+
+    .for {
+        --animate-duration: 0.9s;
+    }
+    .react-bubbly-transitions__bubbly-link {
+        color: gray !important;
+        /* padding: 0 5px; */
+    }
+    .form-control {
+        width: auto;
+        border-radius: 20px !important;
+        &:focus {
+            outline: 0 !important;
+            box-shadow: none;
+        }
+        @media screen and (min-width: 769px) {
+            width: 100%;
+        }
+    }
+    .btn {
+        border-radius: 20px !important;
+        &:focus {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none;
+        }
+    }
+    .cart-count {
+        font-size: 10px !important;
+        position: absolute;
+        top: 0px;
+        @media screen and (min-width: 769px) {
+            left: 22px;
+        }
+    }
+    .navbar-toggler {
+        border: 0px !important;
+    }
 }
 
-.sec {
-    --animate-duration: 0.5s;
-}
-
-.thir {
-    --animate-duration: 0.7s;
-}
-
-.for {
-    --animate-duration: 0.9s;
+.card {
+    width: 290px;
+    /* border-radius: 8px; */
+    border: 0;
+    transition: all 0.2s ease-in-out;
+    padding: 0;
+    &:hover {
+        transform: scale(1.01);
+    }
+    .title-bg {
+        padding: 0.505rem 1rem;
+        background-color: #f5f5f5;
+        border-radius: 99px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .card-title {
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+    .img-bg {
+        padding: 19px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f5f5f5;
+        /* background-color: black; */
+        border-radius: 20px 20px 0 0;
+        .card-img-top {
+            /* padding-bottom: 10px; */
+            /* box-shadow: 0px 10px 15px gray; */
+            border-radius: 14px;
+        }
+    }
+    .card-body {
+        padding: 0;
+        /* margin-top: 10px; */
+        padding: 19px;
+        padding-top: 0;
+        background-color: #f5f5f5;
+        /* background-color: black; */
+        border-radius: 0 0 20px 20px;
+        h4 {
+            font-weight: lighter;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            span {
+                color: rgb(8, 178, 8);
+                padding-right: 10px;
+                strike {
+                    font-size: 18px;
+                }
+            }
+        }
+        .card-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            font-size: 15px;
+        }
+        .card-bottom {
+            padding-top: 10px !important;
+            .btn {
+                border-radius: 99px;
+                padding: 0.385rem 0.95rem;
+                // border: 2px solid;
+                &:focus {
+                    border: none !important;
+                    outline: none !important;
+                    box-shadow: none;
+                }
+            }
+        }
+        .heart-icon {
+            /* width: 30px;
+            height: 30px; */
+            font-size: 30px;
+            color: red;
+            /* fill: red; */
+            /* background: red; */
+            margin-right: 10px;
+        }
+    }
 }

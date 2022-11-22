@@ -3,15 +3,17 @@ import { Link } from "react-router-dom";
 import { BubblyLink } from "react-bubbly-transitions";
 import { useState } from 'react';
 import { Sling as Hamburger } from 'hamburger-react';
-import { useLocation } from "react-router-dom";
-
+// import { useLocation } from "react-router-dom";
+import { useSelector } from 'react-redux';
 import "animate.css/animate.css";
 
-function Navbar(props) {
+function Navbar() {
 
     const [navbar, setNavbar] = useState(false);
-    const pathname = useLocation().pathname;
-
+    // const pathname = useLocation().pathname;
+    const pathname = false;
+    const res = useSelector((state)=>state.cartData);
+    console.log(res,'redux');
     // console.log("nav", props.data.length);
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark animate__animated animate__fadeInDown">
@@ -47,6 +49,7 @@ function Navbar(props) {
                                 <div className={`nav-link ${pathname === '/cart' ? 'active' : ''}`}>
                                     <span className=""><i className="fa-solid fa-cart-shopping fs-5"></i></span>
                                     {/* <span className={`${props.data.length > 0 ? 'd-inline-block' : 'd-none'} cart-count text-white bg-danger rounded-circle px-1 py-0`}>{props.data.length}</span> */}
+                                    <span className={`${res.length > 0 ? 'd-inline-block' : 'd-none'} cart-count text-white bg-danger rounded-circle px-1 py-0`}>{res.length}</span>
                                 </div>
                             </li>
                         </BubblyLink>
