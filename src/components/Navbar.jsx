@@ -3,15 +3,14 @@ import { Link } from "react-router-dom";
 import { BubblyLink } from "react-bubbly-transitions";
 import { useState } from 'react';
 import { Sling as Hamburger } from 'hamburger-react';
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import "animate.css/animate.css";
 
 function Navbar() {
 
     const [navbar, setNavbar] = useState(false);
-    // const pathname = useLocation().pathname;
-    const pathname = false;
+    const pathname = useLocation().pathname;
     const res = useSelector((state)=>state.cartData);
     console.log(res,'redux');
     // console.log("nav", props.data.length);

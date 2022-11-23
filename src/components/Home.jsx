@@ -5,9 +5,9 @@ import { Products } from './Products';
 export const Home = () => {
 
     return (
-        <div>
+        <div className='Home'>
             <Navbar />
-            <div className='text-center fs-2 mt-3'>
+            <div className='text-center fs-2 mt-3 animate__animated animate__fadeInUp'>
                 <p>Home</p>
             </div>
             <Products />

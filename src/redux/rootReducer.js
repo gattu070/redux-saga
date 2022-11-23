@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
-import { cartData } from "./reducer";
+import { cartData } from "./cartSaga/reducer";
+import { productList } from "./productSaga/productReducer";
 
 export default combineReducers({
-    cartData
+    cartData,
+    productList
 })

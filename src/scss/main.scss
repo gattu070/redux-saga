@@ -80,7 +80,6 @@ p {
     .btn {
         border-radius: 20px !important;
         &:focus {
-            border: none !important;
             outline: none !important;
             box-shadow: none;
         }
@@ -89,8 +88,11 @@ p {
         font-size: 10px !important;
         position: absolute;
         top: 0px;
+        // @media screen and (min-width: 769px) {
+        //     left: 22px;
+        // }
         @media screen and (min-width: 769px) {
-            left: 22px;
+            right: 0;
         }
     }
     .navbar-toggler {
@@ -168,9 +170,8 @@ p {
             .btn {
                 border-radius: 99px;
                 padding: 0.385rem 0.95rem;
-                // border: 2px solid;
+                border: 2px solid !important;
                 &:focus {
-                    border: none !important;
                     outline: none !important;
                     box-shadow: none;
                 }
@@ -184,6 +185,26 @@ p {
             /* fill: red; */
             /* background: red; */
             margin-right: 10px;
+            transition: 0.3s ease-in-out;
+        }
+    }
+}
+
+.Cart {
+    .card {
+        width: 228px !important;
+    }
+    .amount-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 10px;
+        border-style: hidden;
+        box-shadow: 0 0 0 2px #cfcfcf;
+        overflow: hidden !important;
+        td {
+            padding: 10px 10px;
+            border-left: 2px solid #cfcfcf;
+            width: 50%;
         }
     }
 }
