@@ -46,6 +46,10 @@ p {
     margin-bottom: 0px !important;
 }
 
+.trans {
+    transition: 0.3s all !important;
+}
+
 .navbar {
     .first {
         --animate-duration: 0.3s;
@@ -167,10 +171,16 @@ p {
         }
         .card-bottom {
             padding-top: 10px !important;
-            .btn {
+            .addBtn {
                 border-radius: 99px;
                 padding: 0.385rem 0.95rem;
-                border: 2px solid !important;
+                border: 2px solid rgb(0, 98, 255) !important;
+                color: rgb(0, 98, 255);
+                &:hover {
+                    border: 2px solid rgb(0, 98, 255) !important;
+                    color: white;
+                    background-color: rgb(0, 98, 255);
+                }
                 &:focus {
                     outline: none !important;
                     box-shadow: none;
@@ -193,6 +203,21 @@ p {
 .Cart {
     .card {
         width: 228px !important;
+        .removeBtn {
+            border-radius: 99px;
+            padding: 0.385rem 0.95rem;
+            border: 2px solid red !important;
+            color: red;
+            &:hover {
+                border: 2px solid red !important;
+                color: white;
+                background-color: red;
+            }
+            &:focus {
+                outline: none !important;
+                box-shadow: none;
+            }
+        }
     }
     .amount-table {
         width: 100%;
@@ -205,6 +230,24 @@ p {
             padding: 10px 10px;
             border-left: 2px solid #cfcfcf;
             width: 50%;
+        }
+    }
+    .checkout {
+        text-align: center;
+        .checkout-btn {
+            padding: 10px 0;
+            width: 100%;
+            background-color: rgb(0, 98, 255);
+            border-radius: 10px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s all;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            &:hover {
+                background-color: rgb(0, 78, 202);
+                // color: #cfcfcf;
+            }
         }
     }
 }

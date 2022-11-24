@@ -1,4 +1,4 @@
-import { ADD_TO_CART, CART_LIST, REMOVE_FROM_CART } from "../constant";
+import { ADD_TO_CART, CHECKOUT_CART, REMOVE_FROM_CART } from "../constant";
 
 export const cartData = (data = [], action) => {
     switch (action.type) {
@@ -14,9 +14,10 @@ export const cartData = (data = [], action) => {
             return [
                 ...remainingItem
             ];
-        case CART_LIST:
+        case CHECKOUT_CART:
+            data=[];
             return [
-                ...data,
+                ...data
             ];
         default:
             return data;

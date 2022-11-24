@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart } from '../redux/cartSaga/action';
+import { checkOutCart } from '../redux/cartSaga/action';
 import { useEffect } from 'react';
 
 export const Cart = () => {
@@ -9,6 +10,9 @@ export const Cart = () => {
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cartData);
     console.log(cart);
+
+    let amount = cart.length && cart.map(item=>item.price).reduce((prev,next)=>prev + next);
+    console.log("amount",amount);
 
     // useEffect(() => {
     //   dispatch()
@@ -39,7 +43,7 @@ export const Cart = () => {
                                             <div className="card-body">
                                                 <p className="card-text mb-3">{cart.desc}</p>
                                                 <h4> <span>${cart.price}</span> <strike>${cart.oldprice}</strike></h4>
-                                                <div className="card-bottom d-flex justify-content-between align-items-center">
+                                                <div className="card-bottom d-flex justify-content-center align-items-center">
                                                     {/* <button
                                                 className="btn btn-outline-primary"
                                                 onClick={() => dispatch(addToCart(product))}
@@ -54,7 +58,7 @@ export const Cart = () => {
                                             </i> */}
                                                     <div>
                                                         <button
-                                                            className="btn btn-outline-danger"
+                                                            className="removeBtn trans"
                                                             onClick={() => dispatch(removeFromCart(cart.id))}
                                                         >
                                                             Remove from cart
@@ -71,9 +75,9 @@ export const Cart = () => {
                         </div>
                     </div>
 
-                    <div className="col-4">
+                    <div className={`${cart.length>0 ? 'col-4' : 'col-8 mx-auto'} trans`} >
                         <div className="main-amount-section pt-3">
-                            <table className="amount-table table table-hover align-middle">
+                            <table className="col-12 amount-table table table-hover align-middle">
                                 {/* <thead className="table-light">
                                         <caption>Table Name</caption>
                                         <tr>
@@ -85,25 +89,32 @@ export const Cart = () => {
                                 <tbody className="table-group-divider">
                                     <tr className="" >
                                         <td scope="row">Amount</td>
-                                        <td>0000</td>
+                                        <td className='text-end'>{amount ? amount : '0000'}</td>
                                     </tr>
                                     <tr className="">
                                         <td scope="row">Discount</td>
-                                        <td>0000</td>
+                                        <td className='text-end'>0000</td>
                                     </tr>
                                     <tr className="">
                                         <td scope="row">Tax</td>
-                                        <td>0000</td>
+                                        <td className='text-end'>0000</td>
                                     </tr>
                                     <tr className="table-active fw-bold">
                                         <td scope="row">Total</td>
-                                        <td>0000</td>
+                                        <td className='text-end'>0000</td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
 
                                 </tfoot>
                             </table>
+                            <div className='col-12 checkout'>
+                                <button
+                                    className='checkout-btn'
+                                    onClick={()=>dispatch(checkOutCart())}
+                                >CHECKOUT
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

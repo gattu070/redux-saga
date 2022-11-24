@@ -43,7 +43,7 @@ export const Products = (props) => {
                                         <h4> <span>${product.price}</span> <strike>${product.oldprice}</strike></h4>
                                         <div className="card-bottom d-flex justify-content-between align-items-center">
                                             <button
-                                                className="btn btn-outline-primary"
+                                                className="addBtn trans"
                                                 onClick={() => dispatch(addToCart(product))}
                                             >
                                                 Add to cart

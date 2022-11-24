@@ -1,9 +1,9 @@
-import { ADD_TO_CART, REMOVE_FROM_CART , CART_LIST } from '../constant'
+import { ADD_TO_CART, REMOVE_FROM_CART , CHECKOUT_CART } from '../constant'
 
-export const cartList = (data) => {
+export const checkOutCart = (data) => {
     console.log("cart list action",data);
     return {
-        type: CART_LIST,
+        type: CHECKOUT_CART,
         data
     }
 }
