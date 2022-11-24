@@ -73,6 +73,7 @@ p {
     .form-control {
         width: auto;
         border-radius: 20px !important;
+        border: 1px solid white;
         &:focus {
             outline: 0 !important;
             box-shadow: none;
@@ -81,8 +82,16 @@ p {
             width: 100%;
         }
     }
-    .btn {
+    .searchBtn {
+        padding: 3px 15px;
+        color: rgb(8, 178, 8);
+        background-color: transparent;
         border-radius: 20px !important;
+        border: 1px solid rgb(8, 178, 8);
+        &:hover {
+            color: white;
+            background-color: rgb(8, 178, 8);
+        }
         &:focus {
             outline: none !important;
             box-shadow: none;

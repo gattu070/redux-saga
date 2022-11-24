@@ -12,6 +12,9 @@ export const Cart = () => {
     console.log(cart);
 
     let amount = cart.length && cart.map(item=>item.price).reduce((prev,next)=>prev + next);
+    let discount = amount/10;
+    let tax = amount*7/100;
+    let total = amount-discount+tax;
     console.log("amount",amount);
 
     // useEffect(() => {
@@ -93,15 +96,15 @@ export const Cart = () => {
                                     </tr>
                                     <tr className="">
                                         <td scope="row">Discount</td>
-                                        <td className='text-end'>0000</td>
+                                        <td className='text-end'>{discount ? discount : '0000'}</td>
                                     </tr>
                                     <tr className="">
                                         <td scope="row">Tax</td>
-                                        <td className='text-end'>0000</td>
+                                        <td className='text-end'>{tax ? tax : '0000'}</td>
                                     </tr>
                                     <tr className="table-active fw-bold">
                                         <td scope="row">Total</td>
-                                        <td className='text-end'>0000</td>
+                                        <td className='text-end'>{total ? total : '0000'}</td>
                                     </tr>
                                 </tbody>
                                 <tfoot>

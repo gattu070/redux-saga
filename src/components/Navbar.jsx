@@ -55,7 +55,7 @@ function Navbar() {
                     </ul>
                     <div className={`d-flex justify-content-center my-2 my-lg-0 ${navbar ? 'animate__animated animate__fadeInLeft thir' : ''}`}>
                         <input className="form-control bg-dark text-white me-sm-2" type="text" placeholder="Search"/>
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <button className="searchBtn trans my-2 my-sm-0" type="submit">Search</button>
                     </div>
                 </div>
             </div>
