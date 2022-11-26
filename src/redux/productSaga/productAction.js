@@ -1,4 +1,4 @@
-import { PRODUCT_LIST , SET_PRODUCT_LIST } from "../constant";
+import { PRODUCT_LIST , PRODUCT_SEARCH} from "../constant";
 
 export const proList = () => {
     // let data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
@@ -9,10 +9,10 @@ export const proList = () => {
     }
 }
 
-// export const setProList = (data) => {
-//     console.log("SET PRODUCT DATA", data);
-//     return {
-//         type: SET_PRODUCT_LIST,
-//         data
-//     }
-// }
+export const proSearch = (query) => {
+    console.log("Search Product",query);
+    return {
+        type: PRODUCT_SEARCH,
+        query
+    }
+}

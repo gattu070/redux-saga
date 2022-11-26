@@ -7,7 +7,7 @@ export const Home = () => {
     return (
         <div className='Home'>
             <Navbar />
-            <div className='text-center fs-2 mt-3 animate__animated animate__fadeInUp'>
+            <div className='text-center text-white fs-2 mt-3 animate__animated animate__fadeInUp'>
                 <p>Home</p>
             </div>
             <Products />

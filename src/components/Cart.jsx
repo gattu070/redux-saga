@@ -11,11 +11,11 @@ export const Cart = () => {
     const cart = useSelector((state) => state.cartData);
     console.log(cart);
 
-    let amount = cart.length && cart.map(item=>item.price).reduce((prev,next)=>prev + next);
-    let discount = amount/10;
-    let tax = amount*7/100;
-    let total = amount-discount+tax;
-    console.log("amount",amount);
+    let amount = cart.length && cart.map(item => item.price).reduce((prev, next) => prev + next);
+    let discount = amount / 10;
+    let tax = amount * 7 / 100;
+    let total = amount - discount + tax;
+    console.log("amount", amount);
 
     // useEffect(() => {
     //   dispatch()
@@ -39,33 +39,35 @@ export const Cart = () => {
                                                 <h5 className="card-title">{cart.name}</h5>
                                                 <i className="fa-solid fa-chevron-right"></i>
                                             </div>
-                                            <div className='img-bg'>
-                                                <img src={require('../assets/images/' + cart.image)} className="card-img-top w-50 h-100 mx-auto" alt="..." />
-                                            </div>
-                                            {/* <hr /> */}
-                                            <div className="card-body">
-                                                <p className="card-text mb-3">{cart.desc}</p>
-                                                <h4> <span>${cart.price}</span> <strike>${cart.oldprice}</strike></h4>
-                                                <div className="card-bottom d-flex justify-content-center align-items-center">
-                                                    {/* <button
+                                            <div className='main-card-body trans'>
+                                                <div className='img-bg'>
+                                                    <img src={require('../assets/images/' + cart.image)} className="card-img-top w-50 h-100 mx-auto" alt="..." />
+                                                </div>
+                                                {/* <hr /> */}
+                                                <div className="card-body">
+                                                    <p className="card-text mb-3">{cart.desc}</p>
+                                                    <h4> <span>${cart.price}</span> <strike>${cart.oldprice}</strike></h4>
+                                                    <div className="card-bottom d-flex justify-content-center align-items-center">
+                                                        {/* <button
                                                 className="btn btn-outline-primary"
                                                 onClick={() => dispatch(addToCart(product))}
                                             >
                                                 Add to cart
                                             </button> */}
-                                                    {/* <i
+                                                        {/* <i
                                                 role='button'
                                                 className="fa-regular fa-heart heart-icon"
                                             // onClick={() => props.addToWishHandler({ name: product.name, price: product.price, img: product.image, oldprice: product.oldprice, desc: product.desc })}
                                             >
                                             </i> */}
-                                                    <div>
-                                                        <button
-                                                            className="removeBtn trans"
-                                                            onClick={() => dispatch(removeFromCart(cart.id))}
-                                                        >
-                                                            Remove from cart
-                                                        </button>
+                                                        <div>
+                                                            <button
+                                                                className="removeBtn trans"
+                                                                onClick={() => dispatch(removeFromCart(cart.id))}
+                                                            >
+                                                                Remove from cart
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -78,9 +80,9 @@ export const Cart = () => {
                         </div>
                     </div>
 
-                    <div className={`${cart.length>0 ? 'col-4' : 'col-8 mx-auto'} trans`} >
+                    <div className={`${cart.length > 0 ? 'col-4' : 'col-8 mx-auto'} trans`} >
                         <div className="main-amount-section pt-3">
-                            <table className="col-12 amount-table table table-hover align-middle">
+                            <table className="col-12 amount-table table align-middle">
                                 {/* <thead className="table-light">
                                         <caption>Table Name</caption>
                                         <tr>
@@ -102,7 +104,7 @@ export const Cart = () => {
                                         <td scope="row">Tax</td>
                                         <td className='text-end'>{tax ? tax : '0000'}</td>
                                     </tr>
-                                    <tr className="table-active fw-bold">
+                                    <tr className="fw-bold">
                                         <td scope="row">Total</td>
                                         <td className='text-end'>{total ? total : '0000'}</td>
                                     </tr>
@@ -114,7 +116,7 @@ export const Cart = () => {
                             <div className='col-12 checkout'>
                                 <button
                                     className='checkout-btn'
-                                    onClick={()=>dispatch(checkOutCart())}
+                                    onClick={() => dispatch(checkOutCart())}
                                 >CHECKOUT
                                 </button>
                             </div>
