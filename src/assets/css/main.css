@@ -1364,9 +1364,11 @@ p {
     color: gray !important;
     width: min-content;
     /* padding: 0 5px; */ }
-  .navbar .navbar-brand .logo {
-    width: 11rem;
-    height: auto; }
+  .navbar .navbar-brand {
+    margin-right: 2rem !important; }
+    .navbar .navbar-brand .logo {
+      width: 10rem;
+      height: auto; }
   .navbar .nav-link {
     display: flex;
     justify-content: center;

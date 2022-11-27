@@ -3,7 +3,6 @@ import Navbar from './Navbar';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart } from '../redux/cartSaga/action';
 import { checkOutCart } from '../redux/cartSaga/action';
-import { useEffect } from 'react';
 
 export const Cart = () => {
 
@@ -16,10 +15,6 @@ export const Cart = () => {
     let tax = amount * 7 / 100;
     let total = amount - discount + tax;
     console.log("amount", amount);
-
-    // useEffect(() => {
-    //   dispatch()
-    // }, [])
 
     return (
         <div className='Cart animate-in'>
@@ -48,18 +43,6 @@ export const Cart = () => {
                                                     <p className="card-text mb-3">{cart.desc}</p>
                                                     <h4> <span>${cart.price}</span> <strike>${cart.oldprice}</strike></h4>
                                                     <div className="card-bottom d-flex justify-content-center align-items-center">
-                                                        {/* <button
-                                                className="btn btn-outline-primary"
-                                                onClick={() => dispatch(addToCart(product))}
-                                            >
-                                                Add to cart
-                                            </button> */}
-                                                        {/* <i
-                                                role='button'
-                                                className="fa-regular fa-heart heart-icon"
-                                            // onClick={() => props.addToWishHandler({ name: product.name, price: product.price, img: product.image, oldprice: product.oldprice, desc: product.desc })}
-                                            >
-                                            </i> */}
                                                         <div>
                                                             <button
                                                                 className="removeBtn trans"
